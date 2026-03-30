@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="light" lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Articulate | Master the Art of First Impressions</title>
+  <title>Bond Confidence | Master the Art of First Impressions</title>
 
   <!-- GSAP 3 + ScrollTrigger (Context7-verified latest patterns) -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -82,23 +82,23 @@
   </script>
 
   <style>
-    /* ── Material Symbols ───────────────────────────────────── */
+    /* -- Material Symbols ------------------------------------- */
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
 
-    /* ── Smooth scroll ──────────────────────────────────────── */
+    /* -- Smooth scroll ---------------------------------------- */
     html { scroll-behavior: smooth; }
     ::selection { background-color: #d3e4ff; color: #001c38; }
 
-    /* ── Scroll progress bar ────────────────────────────────── */
+    /* -- Scroll progress bar ---------------------------------- */
     #scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px; z-index: 9999; width: 0%;
       background: linear-gradient(90deg, #735c00, #fed65b, #ffe088);
       transition: width 0.08s linear;
     }
 
-    /* ── Glass nav ──────────────────────────────────────────── */
+    /* -- Glass nav -------------------------------------------- */
     .glass-nav {
       background: rgba(250, 249, 252, 0.88);
       backdrop-filter: blur(24px);
@@ -107,10 +107,10 @@
     }
     .nav-scrolled { box-shadow: 0 4px 32px rgba(0, 37, 71, 0.08); }
 
-    /* ── Primary gradient ───────────────────────────────────── */
+    /* -- Primary gradient ------------------------------------- */
     .primary-gradient { background: linear-gradient(135deg, #002547 0%, #1b3b5f 100%); }
 
-    /* ── CTA animated gradient ──────────────────────────────── */
+    /* -- CTA animated gradient -------------------------------- */
     @keyframes grad-shift {
       0%, 100% { background-position: 0% 50%; }
       50%       { background-position: 100% 50%; }
@@ -121,14 +121,14 @@
       animation: grad-shift 9s ease infinite;
     }
 
-    /* ── Pulse glow on CTAs ─────────────────────────────────── */
+    /* -- Pulse glow on CTAs ----------------------------------- */
     @keyframes pulse-glow {
       0%, 100% { box-shadow: 0 0 0 0 rgba(255, 224, 136, 0.55); }
       50%       { box-shadow: 0 0 0 18px rgba(255, 224, 136, 0); }
     }
     .cta-pulse { animation: pulse-glow 2.8s ease infinite; }
 
-    /* ── Hero background orbs ───────────────────────────────── */
+    /* -- Hero background orbs --------------------------------- */
     @keyframes orb-drift {
       0%, 100% { transform: translate(0, 0) scale(1); }
       33%       { transform: translate(28px, -18px) scale(1.04); }
@@ -143,7 +143,7 @@
     .orb-b { animation: orb-drift-b 17s ease-in-out infinite; }
     .orb-c { animation: orb-drift   11s ease-in-out infinite 4s; }
 
-    /* ── Phone + floating card float ────────────────────────── */
+    /* -- Phone + floating card float -------------------------- */
     @keyframes float-up {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       40%       { transform: translateY(-13px) rotate(0.4deg); }
@@ -158,26 +158,26 @@
     .float-card-1 { animation: float-up  5.2s ease-in-out infinite 0.6s; }
     .float-card-2 { animation: float-alt 7.8s ease-in-out infinite 1.2s; }
 
-    /* ── Grid dot pattern ───────────────────────────────────── */
+    /* -- Grid dot pattern ------------------------------------- */
     .dot-grid {
       background-image: radial-gradient(circle at 2px 2px, rgba(0,37,71,0.045) 1px, transparent 0);
       background-size: 32px 32px;
     }
 
-    /* ── Mobile menu slide ──────────────────────────────────── */
+    /* -- Mobile menu slide ------------------------------------ */
     #mobile-menu {
       transform: translateY(-110%);
       transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
     }
     #mobile-menu.open { transform: translateY(0); }
 
-    /* ── Hamburger morph ────────────────────────────────────── */
+    /* -- Hamburger morph -------------------------------------- */
     .h-line { transition: transform 0.32s ease, opacity 0.32s ease; }
     .ham-open .line-1 { transform: translateY(8px) rotate(45deg); }
     .ham-open .line-2 { opacity: 0; transform: scaleX(0); }
     .ham-open .line-3 { transform: translateY(-8px) rotate(-45deg); }
 
-    /* ── Animated nav underline ─────────────────────────────── */
+    /* -- Animated nav underline ------------------------------- */
     .nav-link { position: relative; }
     .nav-link::after {
       content: ''; position: absolute; bottom: -2px; left: 0;
@@ -186,7 +186,7 @@
     }
     .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-    /* ── Typing cursor blink ────────────────────────────────── */
+    /* -- Typing cursor blink ---------------------------------- */
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .typing-cursor {
       display: inline-block; width: 3px; height: 0.85em;
@@ -194,40 +194,40 @@
       vertical-align: text-bottom; animation: blink 1s ease infinite;
     }
 
-    /* ── Progress bar fill ──────────────────────────────────── */
+    /* -- Progress bar fill ------------------------------------ */
     .progress-fill { width: 0%; }
     .progress-fill.run {
       transition: width 1.9s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    /* ── Card tilt ──────────────────────────────────────────── */
+    /* -- Card tilt -------------------------------------------- */
     .tilt-card {
       transform-style: preserve-3d;
       will-change: transform;
       transition: transform 0.45s ease, box-shadow 0.45s ease;
     }
 
-    /* ── Marquee trust bar ──────────────────────────────────── */
+    /* -- Marquee trust bar ------------------------------------ */
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     .marquee-inner { animation: marquee 28s linear infinite; display: flex; width: max-content; }
     .marquee-inner:hover { animation-play-state: paused; }
 
-    /* ── Reveal helpers (GSAP sets these, CSS is fallback) ───── */
+    /* -- Reveal helpers (GSAP sets these, CSS is fallback) ----- */
     .will-reveal { opacity: 0; }
   </style>
 </head>
 
 <body class="bg-background text-on-surface font-body overflow-x-hidden">
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- SCROLL PROGRESS -->
 <div id="scroll-progress"></div>
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- NAVIGATION -->
 <nav id="main-nav" class="fixed top-0 w-full z-50 glass-nav">
   <div class="flex justify-between items-center px-6 md:px-10 py-4 max-w-7xl mx-auto">
-    <div class="font-headline text-2xl font-bold tracking-tight text-primary">Articulate</div>
+    <div class="font-headline text-2xl font-bold tracking-tight text-primary">Bond Confidence</div>
 
     <!-- Desktop links -->
     <div class="hidden md:flex items-center space-x-8">
@@ -251,7 +251,7 @@
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- MOBILE MENU OVERLAY -->
 <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen z-40 glass-nav flex flex-col items-center justify-center gap-8 text-center">
   <a class="font-headline text-4xl font-bold text-primary hover:text-primary-container transition-colors" href="#hero"           onclick="closeMobileMenu()">Products</a>
@@ -263,7 +263,7 @@
   </button>
 </div>
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- HERO -->
 <section id="hero" class="relative pt-32 pb-20 min-h-screen flex items-center overflow-hidden">
 
@@ -298,7 +298,7 @@
 
       <!-- Sub-text -->
       <p id="hero-sub" class="will-reveal text-on-surface-variant text-xl max-w-xl leading-relaxed">
-        Articulate combines high-end editorial coaching with digital precision to help you navigate high-stakes environments with unshakeable confidence.
+        Bond Confidence combines high-end editorial coaching with digital precision to help you navigate high-stakes environments with unshakeable confidence.
       </p>
 
       <!-- CTA + avatars -->
@@ -388,54 +388,54 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- TRUST MARQUEE -->
 <div class="py-5 bg-surface-container-low overflow-hidden border-y border-outline-variant/10">
   <div class="marquee-inner select-none">
     <!-- Set 1 -->
     <div class="flex items-center gap-14 pr-14 text-[11px] font-label uppercase tracking-[0.2em] text-on-surface-variant/50 font-semibold">
       <span>Forbes</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>Harvard Business Review</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>McKinsey Certified</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>15,000+ Leaders Trained</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>Fortune 500 Partners</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>92% Promotion Rate</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>4.9 / 5 Rating</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
     </div>
     <!-- Set 2 (duplicate for seamless loop) -->
     <div aria-hidden="true" class="flex items-center gap-14 pr-14 text-[11px] font-label uppercase tracking-[0.2em] text-on-surface-variant/50 font-semibold">
       <span>Forbes</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>Harvard Business Review</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>McKinsey Certified</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>15,000+ Leaders Trained</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>Fortune 500 Partners</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>92% Promotion Rate</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
       <span>4.9 / 5 Rating</span>
-      <span class="text-secondary-fixed-dim">✦</span>
+      <span class="text-secondary-fixed-dim">?</span>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- CORE PILLARS -->
 <section id="pillars" class="py-28 bg-surface-container-low">
   <div class="max-w-7xl mx-auto px-6 md:px-10">
 
     <div class="mb-16">
-      <span class="pillars-label will-reveal font-label text-xs uppercase tracking-[0.3em] text-on-surface-variant font-bold block">The Articulate Framework</span>
+      <span class="pillars-label will-reveal font-label text-xs uppercase tracking-[0.3em] text-on-surface-variant font-bold block">The Bond Confidence Framework</span>
       <h2 class="pillars-title will-reveal font-headline text-5xl md:text-6xl font-bold text-primary mt-3">Our Core Pillars</h2>
     </div>
 
@@ -496,7 +496,7 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="py-28 bg-surface overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-10">
@@ -513,7 +513,7 @@
         <div class="absolute -top-8 -left-6 text-[9rem] font-headline text-primary/5 select-none leading-none pointer-events-none">"</div>
         <div class="relative z-10 space-y-6">
           <p class="font-headline text-3xl italic text-primary-container leading-snug">
-            "Articulate didn't just change how I speak; it changed how I see myself in the boardroom. The architectural approach to presence is a game-changer."
+            "Bond Confidence didn't just change how I speak; it changed how I see myself in the boardroom. The architectural approach to presence is a game-changer."
           </p>
           <div class="flex items-center space-x-4">
             <img alt="Sarah Jenkins" class="w-14 h-14 rounded-full ring-4 ring-surface shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3ponXbEQsXNScupeG8oODs3qEUyaXmhFj_iCe3_M6ZQB4QElifpJIbuUWnzFxFHHHVVFbOxZJDTcy6twQeITCv5vZod64ufVCLKvePnicNPX4_gVTxqF0luj0lme2-ULoyOpX2Fq1WomT8AsZ7GKqMcEA8uXn1RpZpJRqjRvxxQRuBsWi72IgVOlpc_aznJzcseOe8HAdND292SI353s6JcY2BUE_UUKCEBui0tFSalc1uLHcsFqobbbrjMows4XKDtVMAXtudp8r"/>
@@ -585,7 +585,7 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- FINAL CTA -->
 <section id="cta" class="py-24 px-6 md:px-10">
   <div class="cta-wrap will-reveal max-w-5xl mx-auto animated-gradient rounded-xl p-12 md:p-16 text-center relative overflow-hidden shadow-2xl">
@@ -595,7 +595,7 @@
     <div class="relative z-10">
       <h2 class="font-headline text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">Ready to Level Up?</h2>
       <p class="text-primary-fixed text-xl max-w-2xl mx-auto mb-12 opacity-90 leading-relaxed">
-        Join the ranks of elite professionals who have mastered the art of articulate presence. Your first session is the beginning of your new identity.
+        Join the ranks of elite professionals who have mastered the art of confident presence with Bond Confidence. Your first session is the beginning of your new identity.
       </p>
       <button class="magnetic-btn cta-pulse bg-secondary-fixed text-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-secondary-container transition-colors shadow-xl">
         Book Your Free Strategy Session
@@ -604,7 +604,7 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════ -->
+<!-- ------------------------------------------------------ -->
 <!-- FOOTER -->
 <footer class="w-full pt-14 pb-10 bg-surface-container-low">
 
@@ -613,7 +613,7 @@
 
     <!-- Brand -->
     <div class="sm:col-span-2 lg:col-span-1 space-y-5">
-      <div class="font-headline text-xl font-bold text-primary">Articulate</div>
+      <div class="font-headline text-xl font-bold text-primary">Bond Confidence</div>
       <p class="text-on-surface-variant font-body text-sm leading-relaxed max-w-xs">
         Elevating the world's most promising leaders through the power of presence and precision in communication.
       </p>
@@ -665,7 +665,7 @@
       <h5 class="font-bold text-xs text-primary uppercase tracking-widest">Address</h5>
       <address class="not-italic text-on-surface-variant text-sm leading-relaxed flex items-start gap-2">
         <span class="material-symbols-outlined text-base mt-0.5 shrink-0">location_on</span>
-        <span>Block&#8209;C, Plot No.&nbsp;137,<br/>Sector 10, Noida,<br/>U.P.&#8202;—&#8202;Pin&nbsp;201301,<br/>Distt. Gautam Buddh Nagar</span>
+        <span>Block&#8209;C, Plot No.&nbsp;137,<br/>Sector 10, Noida,<br/>U.P.&#8202;�&#8202;Pin&nbsp;201301,<br/>Distt. Gautam Buddh Nagar</span>
       </address>
     </div>
 
@@ -676,7 +676,7 @@
 
     <!-- Copyright -->
     <p class="text-on-surface-variant/70 font-body text-xs leading-relaxed">
-      © 2023&#8202;–&#8202;25. All Rights Reserved By <strong class="text-primary/80">Bondconfidence</strong>.
+      � 2023&#8202;�&#8202;25. All Rights Reserved By <strong class="text-primary/80">Bondconfidence</strong>.
     </p>
 
     <!-- Disclaimer -->
@@ -687,13 +687,13 @@
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- ---------------------------------------------------------------------- -->
 <!-- SCRIPTS -->
 <script>
-/* ─── GSAP setup (Context7-verified ScrollTrigger pattern) ─────────────── */
+/* --- GSAP setup (Context7-verified ScrollTrigger pattern) --------------- */
 gsap.registerPlugin(ScrollTrigger);
 
-/* ─── Scroll progress bar ──────────────────────────────────────────────── */
+/* --- Scroll progress bar ------------------------------------------------ */
 const progressBar = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
   const top = window.scrollY;
@@ -701,13 +701,13 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = (top / h * 100) + '%';
 }, { passive: true });
 
-/* ─── Nav glass + scrolled shadow ─────────────────────────────────────── */
+/* --- Nav glass + scrolled shadow --------------------------------------- */
 const mainNav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   mainNav.classList.toggle('nav-scrolled', window.scrollY > 60);
 }, { passive: true });
 
-/* ─── Mobile menu ──────────────────────────────────────────────────────── */
+/* --- Mobile menu -------------------------------------------------------- */
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileMenu   = document.getElementById('mobile-menu');
 let menuOpen = false;
@@ -726,7 +726,7 @@ hamburgerBtn.addEventListener('click', () => {
   document.body.style.overflow = menuOpen ? 'hidden' : '';
 });
 
-/* ─── Typing effect ────────────────────────────────────────────────────── */
+/* --- Typing effect ------------------------------------------------------ */
 const typedEl   = document.getElementById('typed-text');
 const cursorEl  = document.getElementById('typing-cursor');
 const typeWords = 'First Impressions';
@@ -741,7 +741,7 @@ function typeNext() {
   }
 }
 
-/* ─── Hero GSAP entrance (fromTo = explicit from/to states) ────────────── */
+/* --- Hero GSAP entrance (fromTo = explicit from/to states) -------------- */
 const heroTl = gsap.timeline({ delay: 0.25 });
 heroTl
   .fromTo('#hero-badge',   { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out' })
@@ -752,7 +752,7 @@ heroTl
   .fromTo('#hero-stats',   { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.60, ease: 'power3.out' }, '-=0.30')
   .fromTo('#hero-visual',  { opacity: 0, x: 70 }, { opacity: 1, x: 0, duration: 0.95, ease: 'power4.out' }, 0.55);
 
-/* ─── Count-up animation ────────────────────────────────────────────────── */
+/* --- Count-up animation -------------------------------------------------- */
 function animateCountUp(el) {
   const raw     = parseFloat(el.dataset.target);
   const suffix  = el.dataset.suffix || '';
@@ -777,7 +777,7 @@ ScrollTrigger.create({
   onEnter: () => document.querySelectorAll('.count-up').forEach(animateCountUp)
 });
 
-/* ─── ScrollTrigger reveal helpers ────────────────────────────────────── */
+/* --- ScrollTrigger reveal helpers -------------------------------------- */
 /* Pillars section label + heading */
 gsap.from('.pillars-label', {
   scrollTrigger: { trigger: '.pillars-label', start: 'top 85%' },
@@ -788,7 +788,7 @@ gsap.from('.pillars-title', {
   opacity: 0, y: 32, duration: 0.80, ease: 'power3.out', delay: 0.1
 });
 
-/* Pillar cards stagger — Context7 pattern: forEach + individual ScrollTriggers */
+/* Pillar cards stagger � Context7 pattern: forEach + individual ScrollTriggers */
 gsap.utils.toArray('.pillar-card').forEach((card, i) => {
   gsap.fromTo(card,
     { opacity: 0, y: 60 },
@@ -833,7 +833,7 @@ gsap.fromTo('.cta-wrap',
   }
 );
 
-/* ─── Progress bars (IntersectionObserver on scroll enter) ─────────────── */
+/* --- Progress bars (IntersectionObserver on scroll enter) --------------- */
 const progressObs = new IntersectionObserver(entries => {
   entries.forEach(({ target, isIntersecting }) => {
     if (!isIntersecting) return;
@@ -844,7 +844,7 @@ const progressObs = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 document.querySelectorAll('.progress-fill').forEach(b => progressObs.observe(b));
 
-/* ─── Card 3D tilt ─────────────────────────────────────────────────────── */
+/* --- Card 3D tilt ------------------------------------------------------- */
 document.querySelectorAll('.tilt-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
@@ -861,7 +861,7 @@ document.querySelectorAll('.tilt-card').forEach(card => {
   });
 });
 
-/* ─── Magnetic buttons ─────────────────────────────────────────────────── */
+/* --- Magnetic buttons --------------------------------------------------- */
 document.querySelectorAll('.magnetic-btn').forEach(btn => {
   btn.addEventListener('mousemove', e => {
     const r  = btn.getBoundingClientRect();
@@ -874,7 +874,7 @@ document.querySelectorAll('.magnetic-btn').forEach(btn => {
   });
 });
 
-/* ─── Active nav highlight on scroll ──────────────────────────────────── */
+/* --- Active nav highlight on scroll ------------------------------------ */
 const sections  = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-link');
 window.addEventListener('scroll', () => {
