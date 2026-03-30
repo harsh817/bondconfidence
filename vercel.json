@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "bondconfidence.in" }],
+      "destination": "https://www.bondconfidence.in/$1",
+      "permanent": true
+    }
+  ]
+}
