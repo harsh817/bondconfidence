@@ -212,6 +212,45 @@
     .marquee-inner { animation: marquee 28s linear infinite; display: flex; width: max-content; }
     .marquee-inner:hover { animation-play-state: paused; }
 
+    /* -- Lead capture modal ----------------------------------- */
+    #lead-modal {
+      display: none;
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0, 25, 50, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      align-items: center; justify-content: center;
+    }
+    #lead-modal.open { display: flex; }
+    #lead-modal .modal-card {
+      background: rgba(250, 249, 252, 0.97);
+      border: 1px solid rgba(0, 37, 71, 0.10);
+      border-radius: 1.25rem;
+      box-shadow: 0 32px 80px rgba(0,37,71,0.22);
+      padding: 2.5rem 2rem;
+      width: min(92vw, 460px);
+      position: relative;
+    }
+    #lead-modal input {
+      width: 100%;
+      border: 1.5px solid rgba(0,37,71,0.18);
+      border-radius: 0.6rem;
+      padding: 0.78rem 1rem;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.95rem;
+      color: #002547;
+      background: #f9f9fc;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #lead-modal input:focus { border-color: #002547; }
+    #lead-modal .modal-close {
+      position: absolute; top: 1rem; right: 1.1rem;
+      background: none; border: none; cursor: pointer;
+      font-size: 1.4rem; color: #8a9bb0; line-height: 1;
+    }
+    #lead-modal .modal-close:hover { color: #002547; }
+
     /* -- Reveal helpers (GSAP sets these, CSS is fallback) ----- */
     .will-reveal { opacity: 0; }
   </style>
@@ -234,11 +273,11 @@
       <a class="nav-link active font-headline italic font-medium text-lg text-primary" href="#hero">Products</a>
       <a class="nav-link text-on-surface-variant font-body font-medium hover:text-primary transition-colors duration-300" href="#testimonials">Customer Stories</a>
       <a class="nav-link text-on-surface-variant font-body font-medium hover:text-primary transition-colors duration-300" href="#pillars">Resources</a>
-      <a class="nav-link text-on-surface-variant font-body font-medium hover:text-primary transition-colors duration-300" href="#cta">Pricing</a>
+      <a class="nav-link text-on-surface-variant font-body font-medium hover:text-primary transition-colors duration-300" href="#pricing">Pricing</a>
     </div>
 
     <div class="flex items-center gap-4">
-      <button class="magnetic-btn hidden md:block primary-gradient text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg hover:shadow-xl transition-shadow">
+      <button onclick="openModal()" class="magnetic-btn hidden md:block primary-gradient text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg hover:shadow-xl transition-shadow">
         Start Your Journey
       </button>
       <!-- Hamburger -->
@@ -257,8 +296,8 @@
   <a class="font-headline text-4xl font-bold text-primary hover:text-primary-container transition-colors" href="#hero"           onclick="closeMobileMenu()">Products</a>
   <a class="font-headline text-4xl font-bold text-primary hover:text-primary-container transition-colors" href="#testimonials"   onclick="closeMobileMenu()">Customer Stories</a>
   <a class="font-headline text-4xl font-bold text-primary hover:text-primary-container transition-colors" href="#pillars"        onclick="closeMobileMenu()">Resources</a>
-  <a class="font-headline text-4xl font-bold text-primary hover:text-primary-container transition-colors" href="#cta"            onclick="closeMobileMenu()">Pricing</a>
-  <button onclick="closeMobileMenu()" class="primary-gradient text-white px-8 py-4 rounded-full font-bold text-xl shadow-xl mt-4">
+  <a class="font-headline text-4xl font-bold text-primary hover:text-primary-container transition-colors" href="#pricing"            onclick="closeMobileMenu()">Pricing</a>
+  <button onclick="closeMobileMenu(); openModal()" class="primary-gradient text-white px-8 py-4 rounded-full font-bold text-xl shadow-xl mt-4">
     Start Your Journey
   </button>
 </div>
@@ -303,7 +342,7 @@
 
       <!-- CTA + avatars -->
       <div id="hero-cta" class="will-reveal flex flex-col sm:flex-row items-center gap-4 pt-4">
-        <button class="magnetic-btn cta-pulse primary-gradient text-white px-8 py-4 rounded-full font-bold text-lg w-full sm:w-auto shadow-xl">
+        <button onclick="openModal()" class="magnetic-btn cta-pulse primary-gradient text-white px-8 py-4 rounded-full font-bold text-lg w-full sm:w-auto shadow-xl">
           Book Your Free Strategy Session
         </button>
         <div class="flex items-center gap-3">
@@ -586,6 +625,75 @@
 </section>
 
 <!-- ------------------------------------------------------ -->
+<!-- PRICING -->
+<section id="pricing" class="py-24 px-6 md:px-10 bg-surface-container-low">
+  <div class="max-w-4xl mx-auto text-center">
+
+    <!-- Section label -->
+    <span class="inline-block font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-4">Investment</span>
+    <h2 class="font-headline text-5xl md:text-6xl font-bold text-primary mb-6 leading-tight">One Program.<br/>Transformative Results.</h2>
+    <p class="text-on-surface-variant text-lg max-w-xl mx-auto mb-14 leading-relaxed">Everything you need to command any room — delivered over 6 intentional weeks of hands-on coaching.</p>
+
+    <!-- Pricing card -->
+    <div class="tilt-card relative mx-auto max-w-md bg-surface rounded-2xl border border-outline-variant/30 shadow-2xl overflow-hidden">
+
+      <!-- Top accent band -->
+      <div class="primary-gradient h-2 w-full"></div>
+
+      <div class="p-8 md:p-10">
+
+        <!-- Badge -->
+        <span class="inline-flex items-center gap-1.5 bg-secondary-container/40 text-secondary text-xs font-bold font-label uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          6-Week Intensive
+        </span>
+
+        <!-- Price -->
+        <div class="mb-8">
+          <div class="font-headline text-6xl font-bold text-primary leading-none">&#8377;40,000</div>
+          <div class="text-on-surface-variant text-sm mt-2">One-time &middot; Full program access</div>
+        </div>
+
+        <!-- Features -->
+        <ul class="space-y-3.5 text-left mb-10">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 mt-0.5">replay</span>
+            <span class="text-on-surface font-body text-sm"><strong>High-stakes Roleplays</strong> — practice real-world scenarios under pressure</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 mt-0.5">person</span>
+            <span class="text-on-surface font-body text-sm"><strong>1:1 Coaching Sessions</strong> — personalised attention every week</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 mt-0.5">track_changes</span>
+            <span class="text-on-surface font-body text-sm"><strong>Accountability Check-ins</strong> — stay on track between sessions</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 mt-0.5">graphic_eq</span>
+            <span class="text-on-surface font-body text-sm"><strong>Communication Audit</strong> — baseline assessment of your current presence</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 mt-0.5">feedback</span>
+            <span class="text-on-surface font-body text-sm"><strong>Weekly Feedback Reports</strong> — detailed written notes after every session</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 mt-0.5">workspace_premium</span>
+            <span class="text-on-surface font-body text-sm"><strong>Certificate of Completion</strong> — recognised credential on LinkedIn</span>
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <button onclick="openModal()" class="magnetic-btn cta-pulse primary-gradient text-white w-full py-4 rounded-full font-bold text-lg shadow-xl tracking-wide">
+          Enroll Now &mdash; &#8377;40,000
+        </button>
+
+        <p class="text-on-surface-variant/60 text-xs mt-4">Limited cohort size &middot; Spots fill fast</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------ -->
 <!-- FINAL CTA -->
 <section id="cta" class="py-24 px-6 md:px-10">
   <div class="cta-wrap will-reveal max-w-5xl mx-auto animated-gradient rounded-xl p-12 md:p-16 text-center relative overflow-hidden shadow-2xl">
@@ -597,7 +705,7 @@
       <p class="text-primary-fixed text-xl max-w-2xl mx-auto mb-12 opacity-90 leading-relaxed">
         Join the ranks of elite professionals who have mastered the art of confident presence with Bond Confidence. Your first session is the beginning of your new identity.
       </p>
-      <button class="magnetic-btn cta-pulse bg-secondary-fixed text-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-secondary-container transition-colors shadow-xl">
+      <button onclick="openModal()" class="magnetic-btn cta-pulse bg-secondary-fixed text-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-secondary-container transition-colors shadow-xl">
         Book Your Free Strategy Session
       </button>
     </div>
@@ -688,6 +796,45 @@
 </footer>
 
 <!-- ---------------------------------------------------------------------- -->
+<!-- LEAD CAPTURE MODAL -->
+<div id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+
+    <!-- Default state -->
+    <div id="modal-form-state">
+      <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-2">Get Started</p>
+      <h3 id="modal-title" class="font-headline text-3xl font-bold text-primary mb-2 leading-tight">Reserve Your Spot</h3>
+      <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">6-Week Coaching Program &mdash; &#8377;40,000. Leave your details and we'll reach out to confirm your place.</p>
+
+      <form id="lead-form" onsubmit="handleLeadSubmit(event)" novalidate>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold font-label uppercase tracking-widest text-primary/70 mb-1.5" for="lead-name">Full Name</label>
+            <input id="lead-name" name="name" type="text" placeholder="Your full name" required autocomplete="name" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold font-label uppercase tracking-widest text-primary/70 mb-1.5" for="lead-email">Email Address</label>
+            <input id="lead-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
+          </div>
+        </div>
+        <button type="submit" class="primary-gradient text-white w-full py-4 rounded-full font-bold text-base shadow-lg mt-6 tracking-wide hover:shadow-xl transition-shadow">
+          Secure My Spot
+        </button>
+        <p class="text-on-surface-variant/50 text-[11px] text-center mt-3">We respect your privacy. No spam, ever.</p>
+      </form>
+    </div>
+
+    <!-- Thank-you state (hidden by default) -->
+    <div id="modal-thanks-state" class="hidden text-center py-6">
+      <span class="material-symbols-outlined text-5xl text-secondary mb-4 block">check_circle</span>
+      <h3 class="font-headline text-3xl font-bold text-primary mb-3">You're on the list!</h3>
+      <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs mx-auto">Thanks for your interest. Our team will reach out to you shortly to confirm your spot.</p>
+      <button onclick="closeModal()" class="primary-gradient text-white px-8 py-3 rounded-full font-bold text-sm shadow-lg mt-6 tracking-wide">Close</button>
+    </div>
+  </div>
+</div>
+
 <!-- SCRIPTS -->
 <script>
 /* --- GSAP setup (Context7-verified ScrollTrigger pattern) --------------- */
@@ -886,6 +1033,40 @@ window.addEventListener('scroll', () => {
     a.classList.toggle('active', a.getAttribute('href') === '#' + current);
   });
 }, { passive: true });
+
+/* --- Lead capture modal ------------------------------------------------- */
+const leadModal = document.getElementById('lead-modal');
+
+function openModal() {
+  leadModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('lead-name').focus(), 80);
+}
+
+function closeModal() {
+  leadModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close on backdrop click
+leadModal.addEventListener('click', (e) => {
+  if (e.target === leadModal) closeModal();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && leadModal.classList.contains('open')) closeModal();
+});
+
+function handleLeadSubmit(e) {
+  e.preventDefault();
+  const name  = document.getElementById('lead-name').value.trim();
+  const email = document.getElementById('lead-email').value.trim();
+  if (!name || !email) return;
+  // TODO: wire to form endpoint (Formspree / Google Sheets / etc.)
+  document.getElementById('modal-form-state').classList.add('hidden');
+  document.getElementById('modal-thanks-state').classList.remove('hidden');
+}
 </script>
 </body>
 </html>
